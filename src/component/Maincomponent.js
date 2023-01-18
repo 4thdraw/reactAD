@@ -1,12 +1,13 @@
 import React from 'react';
 import Banner from './Banner';
+import Faq from './Faq'
 
 function Maincomponent() {
   return (
     <div>
-      <Banner></Banner>
+      <Banner objid="mainBanner"></Banner>
       <div>
-        <div style={{height:"100vh"}} id="procss" className="border-top"></div>
+        <Faq></Faq>
         <div style={{height:"100vh"}} id="review" className="border-top bg-dark"></div>
         <div style={{height:"100vh"}} id="qna" className="border-top"></div>
       </div>
