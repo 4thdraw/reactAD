@@ -44,33 +44,40 @@ const Qna = () => {
     // }
 
     return (
-        <div id="qna" className='py-5'>
+        <div id="qna" className='py-5 col-6 mx-auto'>
             <h2 className='text-center py-5'>문의하기</h2>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="email"
-        {...register("email", {
-          required: "Required",
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: "invalid email address"
-          }
-        })}
-      />
-      {/* formState 의 설정해둔 errors의 이메일에러 메세지출력 */}
-      
-      {errors.email && errors.email.message}
-
-      <input
-        {...register("username", {
-          validate: value => value !== "admin" || "Nice try!"
-        })}
-      />
-      {errors.username && errors.username.message}
-
-      <button type="submit">Submit</button>
-    </form>
+        <ul className='ps-0 ms-0'>
+          <li className='mb-3'>
+            <input
+               className='w-100'
+                type="email"
+                {...register("email", {
+                  required: "Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "invalid email address"
+                  }
+                })}
+              />
+              {/* formState 의 설정해둔 errors의 이메일에러 메세지출력 */}      
+              {errors.email && errors.email.message}
+          </li>
+          <li className='mb-3'>
+            <input
+             className='w-100'
+              {...register("username", {
+                validate: value => value !== "admin" || "Nice try!"
+              })}
+            />
+            {errors.username && errors.username.message}
+          </li>
+        </ul>
+        <p className='d-flex justify-content-end'>
+          <button type="submit">보내기</button>
+        </p>      
+      </form>
 
             {/* <form onSubmit={ sendform } className='col-5 mx-auto'>
                 <ul>
