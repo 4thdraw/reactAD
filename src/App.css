@@ -16,6 +16,9 @@ body{
 .beforno:before{ display: none !important;}
 
 
+.App .on a{ color:red !important}
+
+
 .font181614{
   font-size: 18px;
   line-height: 1;  
